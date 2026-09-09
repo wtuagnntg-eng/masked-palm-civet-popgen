@@ -1,0 +1,13 @@
+results/
+*.bam
+*.bai
+*.sam
+*.fastq.gz
+*.fq.gz
+*.g.vcf.gz
+*.vcf.gz
+*.tbi
+*.csi
+__pycache__/
+*.pyc
+.DS_Store
