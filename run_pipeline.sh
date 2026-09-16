@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
 HERE="$(cd "$(dirname "$0")" && pwd)"
+
 steps=(
   01_prepare_reference.sh
   02_wgs_qc_mapping.sh
@@ -17,10 +19,18 @@ steps=(
   13_genomic_differentiation.sh
   14_overlap_annotation.sh
   15_run_enrichment.sh
-  16_rnaseq_mapping_counts.sh
   19_transcriptome_expression.sh
 )
+
 for s in "${steps[@]}"; do
+  echo
+  echo "========================================"
   echo "===== ${s} ====="
+  echo "========================================"
   bash "${HERE}/scripts/${s}"
 done
+
+echo
+echo "========================================"
+echo "Pipeline completed successfully."
+echo "========================================"
